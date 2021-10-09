@@ -16,10 +16,10 @@ public class Decryptage
         BufferedImage image = Fichier.read_img(path);
         double[][] tab_image = Conversion.img_to_tab(image);
 
+        ////Autres(travailler sur les tableaux)
+
         //Affine
         double[][] tab_decrypte_affine = Decryptage.Affine.decryptage_tab(tab_image, key);
-
-        ////Autres(travailler sur les tableaux)
 
         //Creer l'image et la sauvegarder
         BufferedImage image_crypte = Conversion.tab_to_img(tab_decrypte_affine);
@@ -27,6 +27,18 @@ public class Decryptage
         Fichier.write_img(image_crypte, file_decrypte);
 
         System.out.println("\n" + "Decryptage complete");
+    }
+    class Rotation_RGB
+    {
+
+    }
+    class Recursif
+    {
+
+    }
+    class Houselder
+    {
+
     }
     class Affine
     {
