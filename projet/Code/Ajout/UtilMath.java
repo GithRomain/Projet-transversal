@@ -1,5 +1,6 @@
 package Householder;
 import java.util.Random;
+import java.lang.StringBuilder;
 
 public class UtilMath
 {
@@ -46,11 +47,9 @@ public class UtilMath
     public static void afficherMatriceInt(int [][] mat)
     {
         //Affiche les coefficients d'une matrice composée de valeurs entières
-        for (int i = 0; i<mat.length; i++)
-        {
-            for (int j = 0; j<mat[0].length; j++)
-            {
-                System.out.print(mat[i][j] + " ");
+        for (int[] ints : mat) {
+            for (int j = 0; j < mat[0].length; j++) {
+                System.out.print(ints[j] + " ");
             }
             System.out.println();
         }
@@ -59,11 +58,9 @@ public class UtilMath
     public static void afficherMatriceDouble(double [][] mat)
     {
         //Affiche les coefficients d'une matrice composée de valeurs doubles
-        for (int i = 0; i<mat.length; i++)
-        {
-            for (int j = 0; j < mat[0].length; j++)
-            {
-                System.out.print(mat[i][j] + " ");
+        for (double[] doubles : mat) {
+            for (int j = 0; j < mat[0].length; j++) {
+                System.out.print(doubles[j] + " ");
             }
             System.out.println();
         }
@@ -198,17 +195,19 @@ public class UtilMath
     static String conversionDecimalBinaire(int n)
     {
         //Renvoie un String qui est la représentation binaire sur 8 bits de l'int n
-        String str = "";
+        //Utilise la classe Stringbuilder
+        StringBuilder builder = new StringBuilder();
         while (n >= 1)
         {
-            str = n%2 + str;
-            n = n /2;
+            builder.append(n%2);
+            n /= 2;
         }
-        while (str.length() < 8)
+        while (builder.length() < 8)
         {
-            str = 0 + str;
+            builder.append(0);
         }
-        return str;
+        StringBuilder reverse = builder.reverse();
+        return reverse.toString();
     }
 
     static String [][] conversionDecimalBinaireMatrice(int [][] mat)
@@ -255,20 +254,21 @@ public class UtilMath
     static String porteXOR(String str1, String str2)
     {
         //Renvoie un String qui est la sortie d'une porte XOR entre deux binaires sur 8 bits
+        //Utiliser la classe Stringbuilder
         int n = str1.length();
-        String str3 = "";
+        StringBuilder builder = new StringBuilder();
         for (int i = 0; i < n; i++)
         {
             if (str1.charAt(i) == str2.charAt(i))
             {
-                str3 += 0;
+                builder.append(0);
             }
             else
             {
-                str3 += 1;
+                builder.append(1);
             }
         }
-        return str3;
+        return builder.toString();
     }
 
     static String [][] porteXORMatrice(String [][] mat1, String [][] mat2)

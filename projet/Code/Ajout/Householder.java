@@ -26,8 +26,14 @@ public class Householder
             matriceHouseholder = genererHouseholder();
             matriceD = genererMatriceD();
             matriceE = genererMatriceE();
+            System.out.println("Le temps pour générer la matrice E est :" + (System.currentTimeMillis()-debut));
+            debut = System.currentTimeMillis();
             matriceEBinaire = genererMatriceEBinaire();
+            System.out.println("Le temps pour générer la matrice E Binaire est :" + (System.currentTimeMillis()-debut));
+            debut = System.currentTimeMillis();
             matriceHBinaire = genererMatriceHBinaire();
+            System.out.println("Le temps pour générer la matrice H Binaire est :" + (System.currentTimeMillis()-debut));
+            debut = System.currentTimeMillis();
             matriceQ = genererMatriceQ();
         }
     }
