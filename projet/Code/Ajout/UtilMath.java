@@ -225,18 +225,6 @@ public class UtilMath
         return matBinaire;
     }
 
-    static int conversionHuitBinaireDecimal(String str)
-    {
-        //Renvoie un int qui est la valeur en base 10 de la représentation binaire sur 8 bits
-        int n = str.length();
-        int decimal = 0;
-        for (int i = 0; i < n; i++)
-        {
-            decimal += (int) Math.pow(2, 7 - i) * Integer.parseInt(String.valueOf(str.charAt(i)));
-        }
-        return decimal;
-    }
-
     static int [][] conversionHuitBinaireDecimalMatrice(String [][] mat)
     {
         int n = mat.length;
@@ -245,7 +233,7 @@ public class UtilMath
         {
             for (int j = 0; j < n; j++)
             {
-                nouvelleMatriceInt[i][j] = conversionHuitBinaireDecimal(mat[i][j]);
+                nouvelleMatriceInt[i][j] = Integer.parseInt(mat[i][j],2);
             }
         }
         return nouvelleMatriceInt;
