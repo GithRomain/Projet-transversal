@@ -1,3 +1,6 @@
+package Householder;
+import java.util.Random;
+
 public class UtilMath
 {
     //Classe comportant des méthodes utilisées dans d'autres classes.
@@ -161,5 +164,158 @@ public class UtilMath
                 mat[i][j] = mat[i][j] % 256;
             }
         }
+    }
+
+    static void matriceCoeffPositif(int [][] mat)
+    {
+        //Modifie sur place les valeurs pour les rendre positives
+        int n = mat.length;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                mat[i][j] = Math.abs(mat[i][j]);
+            }
+        }
+    }
+
+    static int [][] matriceInversionLincol(int [][] mat)
+    {
+        //Renvoie la matrice inversée selon les lignes et les colonnes
+        int n = mat.length;
+        int [][] nouvelleMatrice = new int[n][n];
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                nouvelleMatrice[i][j] = mat[j][i];
+            }
+        }
+        return nouvelleMatrice;
+    }
+
+    static String conversionDecimalBinaire(int n)
+    {
+        //Renvoie un String qui est la représentation binaire sur 8 bits de l'int n
+        String str = "";
+        while (n >= 1)
+        {
+            str = n%2 + str;
+            n = n /2;
+        }
+        while (str.length() < 8)
+        {
+            str = 0 + str;
+        }
+        return str;
+    }
+
+    static String [][] conversionDecimalBinaireMatrice(int [][] mat)
+    {
+        //Renvoie une matrice de String dont les valeurs sont les représentations binaires sur 8 bits des valeurs de la matrice
+        int n = mat.length;
+        String [][] matBinaire = new String[n][n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                matBinaire[i][j] = UtilMath.conversionDecimalBinaire(mat[i][j]);
+            }
+        }
+        return matBinaire;
+    }
+
+    static int conversionHuitBinaireDecimal(String str)
+    {
+        //Renvoie un int qui est la valeur en base 10 de la représentation binaire sur 8 bits
+        int n = str.length();
+        int decimal = 0;
+        for (int i = 0; i < n; i++)
+        {
+            decimal += (int) Math.pow(2, 7 - i) * Integer.parseInt(String.valueOf(str.charAt(i)));
+        }
+        return decimal;
+    }
+
+    static int [][] conversionHuitBinaireDecimalMatrice(String [][] mat)
+    {
+        int n = mat.length;
+        int [][] nouvelleMatriceInt = new int [n][n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                nouvelleMatriceInt[i][j] = conversionHuitBinaireDecimal(mat[i][j]);
+            }
+        }
+        return nouvelleMatriceInt;
+    }
+
+    static String porteXOR(String str1, String str2)
+    {
+        //Renvoie un String qui est la sortie d'une porte XOR entre deux binaires sur 8 bits
+        int n = str1.length();
+        String str3 = "";
+        for (int i = 0; i < n; i++)
+        {
+            if (str1.charAt(i) == str2.charAt(i))
+            {
+                str3 += 0;
+            }
+            else
+            {
+                str3 += 1;
+            }
+        }
+        return str3;
+    }
+
+    static String [][] porteXORMatrice(String [][] mat1, String [][] mat2)
+    {
+        //Renvoie une matrice de String dont les valeurs sont les sorties d'une porte XOR
+        //entre les valeurs binaires en 8 bits contenues dans les deux matrices en argument
+        int n = mat1.length;
+        String [][] nouvelleMatriceString = new String[n][n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                nouvelleMatriceString[i][j] = porteXOR(mat1[i][j],mat2[i][j]);
+            }
+        }
+        return nouvelleMatriceString;
+    }
+
+    static double [][] conversionMatriceIntEnDouble(int [][] mat)
+    {
+        //Renvoie une matrice double,copie de la matrice int
+        int n = mat.length;
+        double [][] nouvelleMatriceDouble = new double[n][n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                nouvelleMatriceDouble[i][j] = mat[i][j];
+            }
+        }
+        return nouvelleMatriceDouble;
+    }
+
+    static double [][] genererMatriceDouble(int n)
+    {
+        //Renvoie une matrice double de taille n dont les valeurs ont été générées aléatoirement entre 0 et 255
+
+        double [][] nouvelleMatriceDouble = new double[n][n];
+        Random random = new Random();
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                nouvelleMatriceDouble[i][j] = random.nextInt(255);
+            }
+        }
+        return nouvelleMatriceDouble;
+
     }
 }
