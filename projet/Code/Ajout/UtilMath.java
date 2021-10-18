@@ -150,7 +150,7 @@ public class UtilMath
         return nouvelleMat;
     }
 
-    static void matriceModulo(int [][] mat)
+    public static void matriceModulo(int [][] mat)
     {
         //Modifie sur place les valeurs de la matrice modulo 256
         int n = mat.length;
@@ -163,7 +163,7 @@ public class UtilMath
         }
     }
 
-    static void matriceCoeffPositif(int [][] mat)
+    public static void matriceCoeffPositif(int [][] mat)
     {
         //Modifie sur place les valeurs pour les rendre positives
         int n = mat.length;
@@ -176,7 +176,7 @@ public class UtilMath
         }
     }
 
-    static int [][] matriceInversionLincol(int [][] mat)
+    public static int [][] matriceInversionLincol(int [][] mat)
     {
         //Renvoie la matrice inversée selon les lignes et les colonnes
         int n = mat.length;
@@ -192,7 +192,7 @@ public class UtilMath
         return nouvelleMatrice;
     }
 
-    static String conversionDecimalBinaire(int n)
+    public static String conversionDecimalBinaire(int n)
     {
         //Renvoie un String qui est la représentation binaire sur 8 bits de l'int n
         //Utilise la classe Stringbuilder
@@ -210,7 +210,7 @@ public class UtilMath
         return reverse.toString();
     }
 
-    static String [][] conversionDecimalBinaireMatrice(int [][] mat)
+    public static String [][] conversionDecimalBinaireMatrice(int [][] mat)
     {
         //Renvoie une matrice de String dont les valeurs sont les représentations binaires sur 8 bits des valeurs de la matrice
         int n = mat.length;
@@ -225,7 +225,7 @@ public class UtilMath
         return matBinaire;
     }
 
-    static int [][] conversionHuitBinaireDecimalMatrice(String [][] mat)
+    public static int [][] conversionHuitBinaireDecimalMatrice(String [][] mat)
     {
         int n = mat.length;
         int [][] nouvelleMatriceInt = new int [n][n];
@@ -239,7 +239,7 @@ public class UtilMath
         return nouvelleMatriceInt;
     }
 
-    static String porteXOR(String str1, String str2)
+    public static String porteXOR(String str1, String str2)
     {
         //Renvoie un String qui est la sortie d'une porte XOR entre deux binaires sur 8 bits
         //Utiliser la classe Stringbuilder
@@ -259,7 +259,7 @@ public class UtilMath
         return builder.toString();
     }
 
-    static String [][] porteXORMatrice(String [][] mat1, String [][] mat2)
+    public static String [][] porteXORMatrice(String [][] mat1, String [][] mat2)
     {
         //Renvoie une matrice de String dont les valeurs sont les sorties d'une porte XOR
         //entre les valeurs binaires en 8 bits contenues dans les deux matrices en argument
@@ -275,7 +275,7 @@ public class UtilMath
         return nouvelleMatriceString;
     }
 
-    static double [][] conversionMatriceIntEnDouble(int [][] mat)
+    public static double [][] conversionMatriceIntEnDouble(int [][] mat)
     {
         //Renvoie une matrice double,copie de la matrice int
         int n = mat.length;
@@ -290,7 +290,7 @@ public class UtilMath
         return nouvelleMatriceDouble;
     }
 
-    static double [][] genererMatriceDouble(int n)
+    public static double [][] genererMatriceDouble(int n)
     {
         //Renvoie une matrice double de taille n dont les valeurs ont été générées aléatoirement entre 0 et 255
 
