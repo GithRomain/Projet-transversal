@@ -48,7 +48,23 @@ public class MatriceRGB
             {
                 for (int k = 0; k < 3; k++)
                 {
-                    nouvelleMatriceRGB[k][i][j] = random.nextInt(255);
+                    if (i <= n/2 && j <= n/2)
+                    {
+                        nouvelleMatriceRGB[k][i][j] = 30;
+                    }
+                    else if (i > n/2 && j <= n/2)
+                    {
+                        nouvelleMatriceRGB[k][i][j] = 240;
+                    }
+                    else if (i <= n/2 && j > n/2)
+                    {
+                        nouvelleMatriceRGB[k][i][j] = 100;
+                    }
+                    else
+                    {
+                        nouvelleMatriceRGB[k][i][j] = 180;
+                    }
+                    /*nouvelleMatriceRGB[k][i][j] = random.nextInt(255);*/
                 }
             }
         }

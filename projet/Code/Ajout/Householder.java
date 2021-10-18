@@ -83,16 +83,16 @@ public class Householder
         //Méthode pour générer un coeff compris entre INF et SUP (taille d'un short)
         Random random = new Random();
         //à choisir, borne inférieur des coeff possibles
-        int INF = -128;
+        int INF = -1048576;
         //à choisir, borne supérieur des coeff possibles
-        int SUP = 127;
+        int SUP = 1048575;
         return INF + random.nextInt( SUP - INF);
     }
 
     //Le bloc suivant n'est pas utilisé, merci à la fausse condition dans la thèse.
     //Peut être que ça servira plus tard mais pour l'instant, il n'y a aucune différence,
     //La matrice Householder est bien orthogonale symétrique.
-    /*private int [] completerCleSaufDernier()
+    private int [] completerCleSaufDernier()
     {
         //Méthode pour compléter aléatoirement les n-1 premiers
         //coefficients du vecteur
@@ -122,7 +122,7 @@ public class Householder
     private int trouverDernier(int [] tab)
     {
         //Méthode permettant de renvoyer le dernier coeff de la clé
-        int maxMult = (SUP/n);
+        int maxMult = (1048575/n);
         Random random = new Random();
 
         int sommeModulo = UtilMath.sommeCarreTab(tab,n) % n;
@@ -146,7 +146,7 @@ public class Householder
         }
         nouvelleCle[n-1] = trouverDernier(nouvelleCle);             //complète la clé
         return nouvelleCle;
-    }*/
+    }
 
     private int [] completerCle()
     {
