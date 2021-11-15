@@ -1,0 +1,17 @@
+class Joueur constructeur (int numero, char nom, int score, String etat)
+class Joueurs constructeur par default
+
+class Themes constructeur (List<String> themeList)
+
+class abstraite Question constructeur (String T, int D, String Q, String R)
+class QCM extends Question constructeur (String T, int D, String Q, String C1, String C2, String C3, String R)
+class VF extends Question constructeur (String T, int D, String Q, String R)
+class RC extends Question constructeur (String T, int D, String Q, String R)
+
+class Questions constructeur (Themes themes)
+
+interface Phase avec 4 méthodes abstraites (sans selectionner_joueur() car on sélectionne les joueurs lors du déroulement de chaque phase)
+class Presentation extends Phase constructeur par default (initialise le jeu)
+class Phase1 extends Phase constructeur (Phase phase-précédente)
+class Phase2 extends Phase constructeur (Phase phase-précédente)
+class Phase3 extends Phase constructeur (Phase phase-précédente) la méthode déroulement renvoie le joueur gagnant
