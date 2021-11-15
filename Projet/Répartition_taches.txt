@@ -1,5 +1,0 @@
-Lucas : (QCM, VF, RC) (héritage) (fini)
-Kupata : abstraite Question + Joueur + Joueurs (fini)
-moi : Themes + Questions + interface Phase (Phase presentation + Phase 1 + Phase 2 + Phase 3) (Heritage) (fini)
-
-Avancement : (fini) il ne reste plus qu'a créer de vrai question et de faire les bonus
