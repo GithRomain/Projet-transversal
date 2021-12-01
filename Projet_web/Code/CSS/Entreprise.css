@@ -1,0 +1,20 @@
+body{
+    background: black;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.Bordure{
+    background: blue;
+    position: absolute;
+    top: 135px;
+    left:0;
+    height: 86%;
+    width: 100%;
+}
+
+.imgBordure{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
