@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\37rom\OneDrive - Efrei\Bureau\EFREI\Semestre 5\Projet\Code\com\company\artifacts\projet_jar\projet.jar</jar>
+  <outfile>C:\Users\37rom\OneDrive - Efrei\Bureau\Cryptimage.exe</outfile>
+  <errTitle>Téléchargez java SDK 16.0.2</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl>https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html</supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>D:\Téléchargements\cadenas.ico</icon>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>16.0.2</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+</launch4jConfig>
